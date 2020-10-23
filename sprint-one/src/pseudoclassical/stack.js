@@ -4,9 +4,6 @@ var Stack = function() {
   this.length = 0;
 };
 
-
-Stack.prototype.stackMethods = {};
-
 Stack.prototype.push = function(value) {
   let currentIndex = this.length;
   this[currentIndex] = value;
