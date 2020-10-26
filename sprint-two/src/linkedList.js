@@ -46,6 +46,18 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+    // searches for target within the list
+    var currentHead = list.head;
+    // traverse the list
+    while (currentHead !== null) {
+      // check for current head val
+      if (currentHead.value === target) {
+        return true;
+      }
+      currentHead = currentHead.next;
+    }
+    // if traversed whole list without finding match, then target is not within list
+    return false;
   };
 
   return list;
@@ -72,8 +84,9 @@ var list = LinkedList();
 
 list.addToTail(1);
 list.addToTail(2);
-
-list.removeHead();
+console.log(list.contains(4));
+console.log(list.contains(2));
+// list.removeHead();
 // console.log('head = ', list.head);
 // console.log(list.removeHead());
 // console.log('head = ', list.head);
