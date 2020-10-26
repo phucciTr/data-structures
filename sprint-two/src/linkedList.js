@@ -20,6 +20,29 @@ var LinkedList = function() {
   };
 
   list.removeHead = function() {
+
+    // empty list
+    if (list.head === null) {
+      return undefined;
+
+    // list of only (1 element)
+    } else if (list.head.next === null) {
+      let oldHead = list.head;
+      list.head = null;
+      list.tail = null;
+      return oldHead.value;
+
+    // more than (1 node)
+    } else {
+      // save reference to currentHead
+      let oldHead = list.head;
+      // set a (new head) -> currentHead.next
+      list.head = list.head.next;
+      list.head.prev = null;
+      // will return (value) of currentHead from method
+      return oldHead.value;
+    }
+
   };
 
   list.contains = function(target) {
@@ -45,9 +68,25 @@ var Node = function(value) {
 
 // TEST CASES
 var list = LinkedList();
+// console.log(list.removeHead());
+
 list.addToTail(1);
 list.addToTail(2);
-console.log(list.head);
-console.log(list.tail);
-console.log(list.tail.prev);
+
+list.removeHead();
+// console.log('head = ', list.head);
+// console.log(list.removeHead());
+// console.log('head = ', list.head);
+//
+// list.addToTail(2);
+// list.addToTail(3);
+// list.addToTail(4);
+// console.log(list.removeHead());
+
+
+// console.log(list.head);
+// console.log(list.tail);
+// console.log(list.tail.prev);
 // console.log(JSON.stringify(list));
+
+
