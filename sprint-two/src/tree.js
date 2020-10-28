@@ -17,7 +17,6 @@ treeMethods.addChild = function(value) {
 treeMethods.contains = function(target) {
 
   if (this.value === target) { return true; }
-  stepCount++;
   for (let i = 0; i < this.children.length; i++) {
     let childTree = this.children[i];
     if (childTree.contains(target)) { return true; }
@@ -37,17 +36,3 @@ treeMethods.contains = function(target) {
  * subtree because target is not present.
  *
  */
-
-var sampleTree = Tree();
-
-// Test Case
-
-
-var stepCount = 0;
-
-sampleTree.addChild(5);
-sampleTree.addChild(6);
-sampleTree.children[0].addChild(7);
-sampleTree.children[1].addChild(8);
-sampleTree.contains(8);
-console.log(stepCount);
