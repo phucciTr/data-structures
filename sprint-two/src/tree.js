@@ -44,13 +44,3 @@ treeMethods.traverse = function(cb) {
  * scenario is having to visit each subtree because target is not present.
  *
  */
-
-
-
-/**
- *          null
- *         /    \
- *        5      6
- *       /        \
- *      7          8
- */
