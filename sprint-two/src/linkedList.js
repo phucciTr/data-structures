@@ -73,14 +73,15 @@ var isValuePresent = function(value, target) {
 /*
  * Complexity: What is the time complexity of the above functions?
  *
- * addToTail is O(1) [constant time] because we have a tail pointer to add a new value into the list. We move the tail pointer
- * forward after we have added a new value which is done in constant time since it takes the same amount of operations
- * regardless of the size of the linkedList.
+ * addToTail is O(1) [constant time] because we have a tail pointer to add a new value into the list. We move
+ * the tail pointer forward after we have added a new value which is done in constant time since it takes the
+ * same amount of operations regardless of the size of the linkedList.
  *
- * removeHead is O(1) [constant time] because we have a pointer to the head which we move forward to the current head's
- * following node. We return the value from the old head's reference. Again, this method takes the same amount of operations
- * regarless of the size of the linkedList therefore it is constant time.
+ * removeHead is O(1) [constant time] because we have a pointer to the head which we move forward to the
+ * current head's following node. We return the value from the old head's reference. Again, this method takes
+ * the same amount of operations regarless of the size of the linkedList therefore it is constant time.
  *
- * contains is O(n) [linear time] because you must traverse the whole list to know if it doesn't contain a value.
+ * contains is O(n) [linear time] because you must traverse the whole list to know if it doesn't contain a
+ * value.
  *
  */
