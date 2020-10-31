@@ -19,6 +19,16 @@ Graph.prototype.contains = function(node) {
 Graph.prototype.removeNode = function(node) {
 
   // should delete edges on other nodes to node
+  let removedNode = this.nodeSet[node];
+  let targetNodes;
+
+  if (removedNode.edgeSet !== undefined) {
+    targetNodes = removedNode.edgeSet.targets;
+    for (let key in targetNodes) {
+      let currentTargetNode = targetNodes[key];
+      if (currentTargetNode !== undefined) { this.removeEdge(removedNode.value, currentTargetNode.value); }
+    }
+  }
 
   delete this.nodeSet[node];
 };
