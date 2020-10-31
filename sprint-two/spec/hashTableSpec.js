@@ -47,6 +47,12 @@ describe('hashTable', function() {
     window.getIndexBelowMaxForKey = oldHashFunction;
   });
 
+  it('should not throw an error if remove() is called on a value that is not inside the hash table', function() {
+    hashTable.insert('rat', 'cat');
+    hashTable.remove('dog');
+    expect(hashTable.remove('dog')).to.equal(undefined);
+  });
+
   // (Advanced! Remove the extra "x" when you want the following tests to run)
   xit ('should double in size when needed', function() {
     _.each(people, function(person) {
