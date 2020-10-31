@@ -51,5 +51,13 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
-  // add more tests here to test the functionality of linkedList
+  it('should not have a head or tail pointer if LinkedList is empty', function() {
+    linkedList.addToTail(5);
+    linkedList.addToTail(3);
+    linkedList.removeHead();
+    linkedList.removeHead();
+    expect(linkedList.head).to.equal(null);
+    expect(linkedList.tail).to.equal(null);
+
+  });
 });
