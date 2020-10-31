@@ -37,4 +37,16 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should handle multiple insertions of the same value', function() {
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(2);
+
+    var array = [];
+    var func = function(value) { array.push(value); };
+
+    binarySearchTree.depthFirstLog(func);
+    expect(array).to.eql([5, 2]);
+  });
 });
