@@ -30,6 +30,8 @@ HashTable.prototype.retrieve = function(k) {
 
   let currentBucket = this._storage.get(index);
 
+  if (currentBucket === undefined) { return undefined; }
+
   for (let i = 0; i < currentBucket.length; i++) {
     let currentTuple = currentBucket[i];
     let key = currentTuple[0];
@@ -43,6 +45,8 @@ HashTable.prototype.remove = function(k) {
   var valAtK = this.retrieve(k);
 
   if (valAtK) { this.insert(k, undefined); }
+
+  return valAtK;
 
 };
 
