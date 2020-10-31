@@ -42,5 +42,6 @@ treeMethods.traverse = function(cb) {
  * O(1) contains is O(n) where n is the number of nodes (subtrees) in the root tree because we only have to
  * visit each of the subtrees once in order to find if target is present within that subtrees. Worst case
  * scenario is having to visit each subtree because target is not present.
+ * traverse is O(n) because we must visit every node in the tree
  *
  */
