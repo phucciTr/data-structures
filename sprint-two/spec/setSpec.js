@@ -24,4 +24,10 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should return false for a value that was not added', function() {
+    set.add('Apple');
+    set.add('Orange');
+    expect(set.contains('Pear')).to.equal(false);
+  });
+
 });
