@@ -69,6 +69,7 @@ describe('graph', function() {
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
 
+  // This test case was handled above, we duplicated the test without realizing it
   it('should remove edges in both direction when a node is removed ', function() {
     graph.addNode(1);
     graph.addNode(2);
